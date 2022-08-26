@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // imports needed for i18next
 import i18n from "i18next";
-import { useTranslation, initReactI18next } from "react-i18next";
+import { initReactI18next } from "react-i18next";
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend'
 import App from './App'
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+// import "../../node_modules/flag-icons/css/flag-icons.min.css"
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
@@ -16,7 +18,7 @@ i18n
     // the translations
     // (tip move them in a JSON file and import them,
     // or even better, manage them via a UI: https://react.i18next.com/guides/multiple-translation-files#manage-your-translations-with-a-management-gui)
-    supportedLngs: ['en', 'al'],
+    supportedLngs: ['en', 'sq'],
     fallbackLng: 'en',
     detection: {
       order: ['htmlTag', 'cookie', 'localStorage', 'navigator', 'path', 'subdomain'],
