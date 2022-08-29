@@ -12,18 +12,18 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-const languages = [
-    {
-      code: 'en',
-      name: 'English',
-      country_code: 'gb'
-    },
-  {
-    code: 'sq',
-    name: 'Albanian',
-    country_code: 'al'
-  },
-]
+// const languages = [
+//     {
+//       code: 'en',
+//       name: 'English',
+//       country_code: 'gb'
+//     },
+//   {
+//     code: 'sq',
+//     name: 'Albanian',
+//     country_code: 'al'
+//   },
+// ]
 
 const GlobeIcon = () => (
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className='w-10 h-10 stroke-gray-100'>
@@ -33,9 +33,23 @@ const GlobeIcon = () => (
 )
 
 export default function Navbar() {
+  const { t } = useTranslation();
+
+  const languages = [
+    {
+      code: 'en',
+      name: t('English'),
+      country_code: 'gb'
+    },
+  {
+    code: 'sq',
+    name: t('Albanian'),
+    country_code: 'al'
+  },
+]
+
     const currentLanguageCode = cookies.get('i18next') || 'en'
     const currentLanguage = languages.find((l) => l.code === currentLanguageCode)
-    const { t } = useTranslation();
 
     useEffect(() => {
       console.log('Setting page stuff')
@@ -123,14 +137,14 @@ export default function Navbar() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                            <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                              <span className='p-4'>{t('Language')}</span>
+                            <Menu.Items className="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                              <span className='p-2 border-b-[1px] flex justify-center'>{t('Language')}</span>
                               {languages.map(({ code, name, country_code }) => (
                                 <Menu.Item>
                                   {({ active }) => (
                                     <button key={country_code}
                                       onClick={() => i18next.changeLanguage(code)}
-                                      className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                      className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 w-full')}
                                       disabled={code === currentLanguageCode}
                                       style={{ opacity: code === currentLanguageCode ? 0.5 : 1}}
                                       >
