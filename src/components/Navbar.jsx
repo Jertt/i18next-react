@@ -4,7 +4,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import {  MenuIcon, XIcon, } from '@heroicons/react/outline'
 
 import { useTranslation } from "react-i18next";
-import i18next, { t } from 'i18next';
+import i18next from 'i18next';
 import cookies from 'js-cookie'
 
 
