@@ -11,6 +11,9 @@
 # production
 /build
 
+# production
+.htaccess
+
 # misc
 .DS_Store
 .env.local
