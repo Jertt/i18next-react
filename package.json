@@ -1,5 +1,6 @@
 {
   "name": "localization",
+  "homepage": "https://demo.jertt.dev/i18next-react/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -22,8 +22,8 @@ export default function Hero() {
      <section class="text-gray-600 body-font">
        <div class="container px-5 py-32 m-auto">
          <div class="flex flex-col text-center w-full mb-20">
-           <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Multiple Laungage App</h2>
-           <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">Lorem Ipsum Dolor </h1>
+           <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">{t('UpperTitle')}</h2>
+           <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">{t('Title')}</h1>
          </div>
          <div class="flex flex-wrap -m-4">
            <div class="p-4 md:w-1/3">
@@ -34,11 +34,11 @@ export default function Hero() {
                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                    </svg>
                  </div>
-                 <h2 class="text-gray-900 text-lg title-font font-medium">Title Here</h2>
+                 <h2 class="text-gray-900 text-lg title-font font-medium">{t('CardTitle1')}</h2>
                </div>
                <div class="flex-grow">
-                 <p class="leading-relaxed text-base">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit possimus animi provident earum, atque harum praesentium inventore explicabo eos excepturi</p>
-                 <a href class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                 <p class="leading-relaxed text-base">{t('CardBody1')}</p>
+                 <a href class="mt-3 text-indigo-500 inline-flex items-center">{t('Learn')}
                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                      <path d="M5 12h14M12 5l7 7-7 7"></path>
                    </svg>
@@ -55,11 +55,11 @@ export default function Hero() {
                      <circle cx="12" cy="7" r="4"></circle>
                    </svg>
                  </div>
-                 <h2 class="text-gray-900 text-lg title-font font-medium">Title Here</h2>
+                 <h2 class="text-gray-900 text-lg title-font font-medium">{t('CardTitle2')}</h2>
                </div>
                <div class="flex-grow">
-                 <p class="leading-relaxed text-base">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit possimus animi provident earum, atque harum praesentium inventore explicabo eos excepturi</p>
-                 <a href class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                 <p class="leading-relaxed text-base">{t('CardBody2')}</p>
+                 <a href class="mt-3 text-indigo-500 inline-flex items-center">{t('Learn')}
                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                      <path d="M5 12h14M12 5l7 7-7 7"></path>
                    </svg>
@@ -77,11 +77,11 @@ export default function Hero() {
                      <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
                    </svg>
                  </div>
-                 <h2 class="text-gray-900 text-lg title-font font-medium">Title Here</h2>
+                 <h2 class="text-gray-900 text-lg title-font font-medium">{t('CardTitle3')}</h2>
                </div>
                <div class="flex-grow">
-                 <p class="leading-relaxed text-base">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit possimus animi provident earum, atque harum praesentium inventore explicabo eos excepturi</p>
-                 <a href class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                 <p class="leading-relaxed text-base">{t('CardBody3')}</p>
+                 <a href class="mt-3 text-indigo-500 inline-flex items-center">{t('Learn')}
                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                      <path d="M5 12h14M12 5l7 7-7 7"></path>
                    </svg>

@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
+import React, { useEffect, Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import {  MenuIcon, XIcon, } from '@heroicons/react/outline'
 
@@ -37,11 +37,16 @@ export default function Navbar() {
     const currentLanguage = languages.find((l) => l.code === currentLanguageCode)
     const { t } = useTranslation();
 
+    useEffect(() => {
+      console.log('Setting page stuff')
+      document.title = t('app_title')
+    }, [currentLanguage, t])
+
     const navigation = [
-      { name: 'Github', href: 'https://github.com/Jertt',  current: false },
+      { name: 'Github', href: 'https://github.com/Jertt', current: false },
       { name: 'Instagram', href: '/', current: false },
       { name: t('Projects'), href: 'https://jertt.dev', current: false },
-      { name: 'Website', href: 'https://jertt.dev', current: false },
+      { name: t('Portfolio'), href: 'https://jertt.dev', current: false },
     ]
     
   return (
@@ -127,8 +132,10 @@ export default function Navbar() {
                                       onClick={() => i18next.changeLanguage(code)}
                                       className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                       disabled={code === currentLanguageCode}
+                                      style={{ opacity: code === currentLanguageCode ? 0.5 : 1}}
                                       >
-                                          <span className={`fi fi-${country_code} mx-1`}></span>
+                                          <span className={`fi fi-${country_code} mx-1`}
+                                                style={{ opacity: code === currentLanguageCode ? 0.5 : 1}}></span>
                                       {name}
                                     </button>
                                   )}

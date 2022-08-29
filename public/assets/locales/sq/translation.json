@@ -1,5 +1,16 @@
 {
+    "app_title": "Web Aplikacioni shumëgjuhësh",
     "Projects": "Projektet",
-    "Multiple": "Multiple Language App",
-    "Language": "Gjuha"
+    "Portfolio": "Portfolio",
+    "Multiple": "Aplikacioni i shumë gjuhëve",
+    "Language": "Gjuhe",
+    "UpperTitle": "Aplikacioni i shumë gjuhëve",
+    "Title": "Kjo web faqe është krijuar me React dhe i18next",
+    "CardTitle1": "Këtu shkon titulli i parë",
+    "CardBody1": "Këto blloqe janë marrë nga tailblocks.cc",
+    "CardTitle2": "Këtu shkon titulli i dytë",
+    "CardBody2": "Shiriti navigues është nga komponentet e tailwindui",
+    "CardTitle3": "Këtu shkon titulli i tretë",
+    "CardBody3": "Ky projekt përfshin shumë gjuhë i krijuar me React & i18next",
+    "Learn": "Shiko me shume"
 }

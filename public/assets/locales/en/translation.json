@@ -1,6 +1,16 @@
 {
+    "app_title": "Multi Language App",
     "Projects": "Projects",
-    "Website": "Website",
+    "Portfolio": "Portfolio",
     "Multiple": "Multiple Language App",
-    "Language": "Language"
+    "Language": "Language",
+    "UpperTitle": "Multiple Language App",
+    "Title": "This website was created with React",
+    "CardTitle1": "Here goes the first title",
+    "CardBody1": "These blocks were taken from tailblocks.cc",
+    "CardTitle2": "Here goes the second title",
+    "CardBody2": "The navbar is from tailwind ui free component",
+    "CardTitle3": "Here goes the third title",
+    "CardBody3": "This project includes multiple languages created with React & i18next",
+    "Learn": "Learn More"
 }
