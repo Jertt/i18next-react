@@ -5,6 +5,7 @@ import {  MenuIcon, XIcon, } from '@heroicons/react/outline'
 
 import { useTranslation } from "react-i18next";
 import i18next, { t } from 'i18next';
+import cookies from 'js-cookie'
 
 
 function classNames(...classes) {
@@ -32,6 +33,8 @@ const GlobeIcon = () => (
 )
 
 export default function Navbar() {
+    const currentLanguageCode = cookies.get('i18next') || 'en'
+    const currentLanguage = languages.find((l) => l.code === currentLanguageCode)
     const { t } = useTranslation();
 
     const navigation = [
@@ -116,12 +119,14 @@ export default function Navbar() {
                     leaveTo="transform opacity-0 scale-95"
                   >
                             <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                              <span className='p-4'>{t('Language')}</span>
                               {languages.map(({ code, name, country_code }) => (
                                 <Menu.Item>
                                   {({ active }) => (
                                     <button key={country_code}
                                       onClick={() => i18next.changeLanguage(code)}
                                       className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                      disabled={code === currentLanguageCode}
                                       >
                                           <span className={`fi fi-${country_code} mx-1`}></span>
                                       {name}

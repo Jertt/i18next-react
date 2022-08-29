@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // imports needed for i18next
@@ -21,25 +21,35 @@ i18n
     supportedLngs: ['en', 'sq'],
     fallbackLng: 'en',
     detection: {
-      order: ['htmlTag', 'cookie', 'localStorage', 'navigator', 'path', 'subdomain'],
+      order: ['cookie', 'htmlTag', 'localStorage', 'navigator', 'path', 'subdomain'],
       caches: ['cookie'],
     },
     backend: {
       loadPath: '/assets/locales/{{lng}}/translation.json',
     },
-    react : {
-      useSuspense: false
-    },
+    // react : {
+    //   useSuspense: false
+    // },
     interpolation: {
       escapeValue: false // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
     }
   });
 
+const loadingMarkup = (
+  <div className='flex h-screen'>
+    <div className='m-auto'>
+      <h3>Loading...</h3>
+    </div>
+  </div>
+)
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <Suspense fallback={loadingMarkup}>
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  </Suspense>
 );
 
 // If you want to start measuring performance in your app, pass a function
