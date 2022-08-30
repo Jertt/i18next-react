@@ -29,7 +29,6 @@ const GlobeIcon = () => (
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className='w-10 h-10 stroke-gray-100'>
   <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
 </svg>
-
 )
 
 export default function Navbar() {
@@ -56,12 +55,16 @@ export default function Navbar() {
       document.title = t('app_title')
     }, [currentLanguage, t])
 
-    const navigation = [
+    const navigationBlank = [
       { name: 'Github', href: 'https://github.com/Jertt', current: false },
-      { name: 'Instagram', href: '/', current: false },
+      { name: 'Instagram', href: 'https://www.instagram.com/jeartt.th/', current: false },
       { name: t('Projects'), href: 'https://jertt.dev', current: false },
       { name: t('Portfolio'), href: 'https://jertt.dev', current: false },
     ]
+    // const navigation = [
+    //   { name: t('Projects'), href: 'https://jertt.dev', current: false },
+    //   { name: t('Portfolio'), href: 'https://jertt.dev', current: false },
+    // ]
     
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -95,7 +98,21 @@ export default function Navbar() {
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {navigationBlank.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        target="_blank" rel="noreferrer noopener"
+                        className={classNames(
+                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          'px-3 py-2 rounded-md text-sm font-medium'
+                        )}
+                        aria-current={item.current ? 'page' : undefined}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                    {/* {navigation.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
@@ -107,7 +124,7 @@ export default function Navbar() {
                       >
                         {item.name}
                       </a>
-                    ))}
+                    ))} */}
                   </div>
                 </div>
               </div>
@@ -164,7 +181,7 @@ export default function Navbar() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
+              {navigationBlank.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"

@@ -2,11 +2,11 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // imports needed for i18next
+import App from './App'
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend'
-import App from './App'
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 // import "../../node_modules/flag-icons/css/flag-icons.min.css"
 
